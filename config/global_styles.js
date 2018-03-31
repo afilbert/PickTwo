@@ -1,9 +1,9 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export const colors = {
-  good: '#2D882D',
-  cheap: '#226666',
-  fast: '#AA3939',
+  good: '#00C618',
+  cheap: '#05ACD3',
+  fast: '#FF7A00',
   background: '#202020',
   errorText: '#FA3256'
 };

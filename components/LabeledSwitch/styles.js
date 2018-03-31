@@ -8,6 +8,7 @@ export default EStyleSheet.create({
     marginVertical: '1rem'
   },
   label: {
-    width: '20%'
+    width: '20%',
+    fontWeight: 'bold'
   }
 });

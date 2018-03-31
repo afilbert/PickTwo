@@ -1,26 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { colors } from '../../config/global_styles';
 import { View, Text, Switch } from 'react-native';
 import styles from './styles';
 
 const LabeledSwitch = (props) => {
-  const { text, onValueChanged } = props;
+  const { text, color, value, onValueChanged } = props;
   return (
     <View style={styles.row}>
-      <Text style={styles.label}>{text}</Text>
-      <Switch onValueChange={onValueChanged}></Switch>
+      <Text style={[styles.label, {color: color}]}>{text}</Text>
+      <Switch thumbTintColor={color} tintColor={color} onTintColor={color} value={value} onValueChange={onValueChanged}></Switch>
     </View>
   );
 };
 
 LabeledSwitch.propTypes = {
   text: PropTypes.string,
-  onPress: PropTypes.func,
+  color: PropTypes.string,
+  value: PropTypes.bool,
+  onValueChanged: PropTypes.func,
 };
 
 LabeledSwitch.defaultProps = {
   text: 'Good',
-  onValueChanged: () => alert('Switch switched'),
+  color: colors.good,
+  value: false,
+  onValueChanged: (obj) => alert('Switch switched'),
 };
 
 export default LabeledSwitch;
