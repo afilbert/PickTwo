@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { colors } from '../../config/global_styles';
-import { View, Text, Switch } from 'react-native';
+import { Platform, View, Text, Switch } from 'react-native';
 import styles from './styles';
 
 const LabeledSwitch = (props) => {
@@ -9,7 +9,7 @@ const LabeledSwitch = (props) => {
   return (
     <View style={styles.row}>
       <Text style={[styles.label, {color: color}]}>{text}</Text>
-      <Switch thumbTintColor={color} tintColor={color} onTintColor={color} value={value} onValueChange={onValueChanged}></Switch>
+      <Switch thumbTintColor={color} tintColor={ Platform.OS == "android" ? undefined : color } onTintColor={color} value={value} onValueChange={onValueChanged}></Switch>
     </View>
   );
 };
